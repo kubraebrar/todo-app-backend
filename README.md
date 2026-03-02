@@ -1,73 +1,91 @@
-Todo App Backend (Node.js & Prisma 7)
-This project is a dockerized Todo List application developed using modern backend architecture. It features user registration, authentication, and secure data management.
+#  Todo App Backend (Node.js & Prisma 7)
 
-Tech Stack
-Node.js & Express.js: Server-side logic and REST API.
+This project is a **Dockerized Todo List backend application** built with a modern server architecture. It provides secure user authentication, authorization, and personal task management using industry-standard tools.
 
-Prisma v7.x: Modern ORM for database interaction, utilizing the latest adapter-pg.
+---
 
-PostgreSQL: Relational database for persistent storage.
+##  Tech Stack
+- Node.js & Express.js — REST API backend
+- Prisma v7.x — ORM with adapter-pg
+- PostgreSQL — Database
+- Docker & Docker Compose — Containerization
+- JWT — Authentication
+- Bcrypt.js — Password hashing
 
-Docker & Docker Compose: Containerization of the application and database.
+---
 
-JSON Web Token (JWT): Secure user authentication.
+## Features
+- User registration with hashed passwords
+- JWT authentication
+- Protected routes
+- Dockerized setup
+- Prisma v7 compatible architecture
 
-Bcrypt.js: Secure password hashing.
+---
 
-Features
-User Sign-Up: Secure registration with hashed passwords stored in PostgreSQL.
+##  Installation
 
-User Login: JWT-based authentication for secure access to personal data.
-
-Docker Integration: Spin up the entire development environment with a single command.
-
-Prisma 7 Ready: Implements the latest Prisma standards including manual adapter configuration.
-
-Installation and Setup
-Follow these steps to run the project locally:
-
-Clone the Repository:
-
+### 1. Clone Repo
+```bash
 git clone https://github.com/kubraebrayrak/todo-app-backend.git
 cd todo-app-backend
-Configure Environment Variables:
-Create a .env file in the root directory and add the following:
+```
 
-Kod snippet'i
+---
+
+### 2. Create `.env` file
+```env
 DATABASE_URL="postgresql://postgres:postgres@database:5432/todoapp"
 JWT_SECRET="your_secure_secret_key"
 PORT=5000
-Start with Docker:
-To build and run the application and database containers:
+```
 
+---
+
+### 3. Run Containers
+```bash
 docker compose up --build
-Initialize the Database:
-While the containers are running, synchronize your database schema:
+```
 
+---
+
+### 4. Sync Database
+```bash
 npx prisma db push
-The application will be accessible at http://localhost:5000.
+```
 
-Project Structure
+---
+
+###  Run App
+```
+http://localhost:5000
+```
+
+---
+
+##  Project Structure
+```
 chapter_4/
 │
 ├── public/
-│   └── index.html              
-│
-├── prisma/                     # Database schema, migrations, and seeds
-│   ├── schema.prisma           # Database model definitions
-│   └── migrations/             # SQL migration history
-│
+│   └── index.html
+├── prisma/
+│   ├── schema.prisma
+│   └── migrations/
 ├── src/
-│   └── middlewares/
-│       └── authMiddleware.js    # Middleware for verifying JWT and protecting routes
-│   └── routes/
-│       └── authRoutes.js        # Routes for user registration and login
-│       └── todoRoutes.js        # Routes for authenticated CRUD operations on todos
-│   └── prismaClient.js          # Prisma client database setup and table creation
-│   └── server.js                # Main server entry point that sets up routing and middleware
-│
-├── Dockerfile                   # Docker container setup instructions
-├── docker-compose.yaml          # Docker setup config file
-├── package.json                 # Project dependencies and scripts
-├── package-lock.json            # Lockfile for exact dependency versions
-└── todo-app.rest                # REST client file for emulating API requests
+│   ├── middlewares/
+│   │   └── authMiddleware.js
+│   ├── routes/
+│   │   ├── authRoutes.js
+│   │   └── todoRoutes.js
+│   ├── prismaClient.js
+│   └── server.js
+├── Dockerfile
+├── docker-compose.yaml
+├── package.json
+├── package-lock.json
+└── todo-app.rest
+```
+
+---
+
