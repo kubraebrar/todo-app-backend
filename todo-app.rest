@@ -1,0 +1,43 @@
+### Get 
+Get http://localhost:5000
+
+### Post
+POST http://localhost:5000/auth/register
+Content-Type: application/json
+
+{
+    "username": "bayrakkubra2004@gmail.com",
+    "password": "123123123"
+}   
+###
+Post http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+    "username": "bayrakkubra2004@gmail.com",
+    "password": "123123123"
+}   
+
+### Fetch all todos 
+GET http://localhost:5000/todos
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY1NjI1OTM4LCJleHAiOjE3NjU3MTIzMzh9.tflro2gwuOlJSMcXgn1CkynkEgXZbLcdpXYJHMtuWT8
+
+### Create the new todo 
+Post http://localhost:5000/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY1NjI1OTM4LCJleHAiOjE3NjU3MTIzMzh9.tflro2gwuOlJSMcXgn1CkynkEgXZbLcdpXYJHMtuWT8
+Content-Type: application/json
+
+{
+    "task": "learn git"
+}
+
+### Update the todo 
+PUT http://localhost:5000/todos/2?
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzY1NjI1OTM4LCJleHAiOjE3NjU3MTIzMzh9.tflro2gwuOlJSMcXgn1CkynkEgXZbLcdpXYJHMtuWT8
+Content-Type: application/json
+
+{
+    "completed": 1
+}
+
+
